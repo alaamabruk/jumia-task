@@ -1,0 +1,17 @@
+spring:
+  jpa:
+    database-platform: 'com.jumia.task.config.SQLiteDialect'
+    hibernate:
+      ddl-auto=update: 'update'
+    properties:
+      hibernate:
+        show_sql: 'true'
+        use_sql_comments : 'false'
+        format_sql : 'true'
+  datasource:
+    driver-class-name: 'org.sqlite.JDBC'
+    url : 'jdbc:sqlite:sample.db'
+    username :
+    password :
+    initialization-mode : 'always'
+
