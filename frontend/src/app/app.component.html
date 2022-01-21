@@ -1,0 +1,60 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<div style="display: inline-block; width: 100%; margin-top: 10px; margin-bottom: 10px">
+  <div style="float: left">
+    <label for="state_ALL">State :&nbsp;</label>
+    <br>
+    <input type="radio" value="" name="stateFilter" checked="checked" (change)="onButtonPressed()" [(ngModel)]="stateFilter" />
+    <label for="state_ALL">All:&nbsp;</label>
+    <br>
+    <input type="radio"  value="true" name="stateFilter" (change)="onButtonPressed()" [(ngModel)]="stateFilter"/>
+    <label for="state_Active">Valid:&nbsp;</label>
+    <br>
+    <input type="radio"  value="false" name="stateFilter"  (change)="onButtonPressed()" [(ngModel)]="stateFilter"/>
+    <label for="state_Active">Not Valid:&nbsp;</label>
+  </div>
+  <div>
+    <label for="quickFilter">Country Filter</label>
+    <input (keyup)="onButtonPressed()" [(ngModel)]="countryFilter" type="text" id="quickFilter"
+           placeholder="Type text to filter..." style="margin-right: 10px"/>
+  </div>
+
+</div>
+
+<!--<ag-grid-angular style="width: 1000px; height: 350px;" class="ag-theme-balham" [rowData]="phones"
+                 [columnDefs]="columnDefs"  [overlayNoRowsTemplate]="noRowsTemplate"
+                 [overlayLoadingTemplate]="loadingTemplate"
+>
+</ag-grid-angular>-->
+
+
+<div class="content" role="main">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>phone</th>
+      <th>country</th>
+      <th>countryCode</th>
+      <th>validityStatus</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of phones">
+      <td>{{item.phone}}</td>
+      <td>{{item.country}}</td>
+      <td>{{item.countryCode}}</td>
+      <td>{{item.validityStatus}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<router-outlet></router-outlet>
