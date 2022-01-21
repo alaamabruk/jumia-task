@@ -60,7 +60,7 @@ How to run the project
 
 ###### then run the below to start a container:
 
-> docker run -p 3000:3000 front-end
+> docker run -p 8080:8080 front-end
 
 Unit tests
 
